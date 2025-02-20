@@ -49,21 +49,21 @@ export class AppService {
         { $set: updatedTask },
       );
       if (!res) return "Can't Update User!";
-      return 'User Updated Successfully.';
+      return 'Task Updated Successfully.';
     } catch (error) {
       console.error('Error: ', error);
-      return "Can't Update User!";
+      return "Can't Update Task!";
     }
   }
 
   async deleteTask(id: string): Promise<string> {
     try {
       const res = await Tasks.findByIdAndDelete({ _id: id });
-      if (!res) return "Can't Delete User!";
-      return 'User Deleted Successfully.';
+      if (!res) return "Can't Delete Task!";
+      return 'Task Deleted Successfully.';
     } catch (error) {
       console.error('Error: ', error);
-      return "Can't Delete User!";
+      return "Can't Delete Task!";
     }
   }
 }
